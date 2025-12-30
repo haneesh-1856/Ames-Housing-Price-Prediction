@@ -45,8 +45,7 @@ The following models were compared:
 
 Clustering:
 
-This clustering task was employed for unsupervised segmentation of houses, considering structural and quality attributes such as Overall Quality, condition, LivingArea, Basement, Garage, Bathroom, Lot, Year.. And with these models, 
-Following clustering algorithms were applied:
+This clustering task was employed for unsupervised segmentation of houses, considering structural and quality attributes such as Overall Quality, condition, LivingArea, Basement, Garage, Bathroom, Lot, Year.. And with these models, Following clustering algorithms were applied:
 
 K-Means Clustering, DBSCAN, Agglomerative Hierarchy Clustering PCA was used strictly for dimensionality reduction purposes, visualization.
 
@@ -55,26 +54,40 @@ Final Performance Summaries
 Classification (House Style Prediction)
 
 Model	Test Accuracy	Key Observation
+
 Logistic Regression	~62%	High recall for minority classes but low precision
+
 k-Nearest Neighbors	~81%	Strong performance on dominant classes, poor minority coverage
+
 Random Forest	~81%	Best balance between accuracy and minority-class performance
+
 Best classification model: Random Forest, despite class imbalance, Random Forest achieved the strongest overall performance, especially in macro-averaged metrics.
 
 Regression (Sale Price Prediction):
 
 Model	R²	RMSE
+
 Linear Regression	~0.82	~$35,200
+
 Ridge Regression	~0.82	~$35,200
+
 Gradient Boosting Regressor	~0.90	~$26,000
+
 Best regression model: Gradient Boosting Regressor, this model significantly reduced prediction error and captured non-linear patterns not addressed by linear models.
 
 Clustering:
 
 Algorithm	Silhouette Score	Number of Clusters
+
 K-Means	~0.20	3
+
 DBSCAN	~0.14	Variable
+
 Agglomerative	~0.17	3
+
 Best clustering approach: K-Means, although cluster separation was moderate, K-Means produced the most interpretable and stable segmentation.
+
 Key Insights and Observations:
+
 Feature engineering played a great role in enhancing model performance for all tasks, especially in capturing meaningful relationships in the housing data. Ensemble models consistently gave the best results for all tasks due to their ability to model non-linear interactions among features effectively. Living area, overall quality, basement and garage attributes turned out to be the most influential factors in determining house prices. There was a marked impact of class imbalance in the classification results, yielding weaker performances for the rare house styles. Clustering methods identified broad housing segments, although clear and well-separated groupings were limited because of complexity and high dimensionality.
 
